@@ -1,0 +1,3 @@
+/venv
+.env
+/config/GCP_BigQuery_Key.json

@@ -1,0 +1,6 @@
+yfinance
+pandas
+pandas_gbq
+google-cloud-bigquery
+python-dotenv
+pyarrow
