@@ -1,5 +1,6 @@
 import yfinance as yf
 import pandas as pd
+
 from google.cloud import bigquery
 from config import settings
 
