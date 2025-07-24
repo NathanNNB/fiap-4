@@ -1,12 +1,11 @@
 import os
-# import joblib
 from flask import Blueprint, jsonify, request
-# from flask_cors import CORS
-# from google.cloud import bigquery
-# import numpy as np
+from flask_cors import CORS
 
 
 prediction = Blueprint("prediction", __name__)
+CORS(prediction)
+
 @prediction.route("/", methods=["GET"])
 def get_predicition():
 
