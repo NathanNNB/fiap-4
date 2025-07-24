@@ -36,3 +36,24 @@
     END_DATE = "2024-07-20"
     SYMBOLS = ["AAPL"]  # You can add more symbols as needed
 
+###  Backend
+
+1. Open the backend folder:
+   ```
+   bash
+   cd backend
+   ```
+2. Create and activate a virtual environment:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # (Linux/Mac) or 
+   .\venv\Scripts\activate (Windows)
+   ```
+4. Install the requirements:
+   ```
+   pip install -r requirements.txt
+   ```
+6. Run the `main.py` file:
+   ```
+   python main.py
+   ```
