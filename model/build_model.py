@@ -12,7 +12,7 @@ def main(input_shape):
     model.add(LSTM(units=50, return_sequences=False))
     model.add(Dropout(0.2))
 
-    model.t(Dense(units=1))  # Saída: valor do próximo preço
+    model.add(Dense(units=1))  # Saída: valor do próximo preço
 
     model.compile(optimizer='adam', loss='mean_squared_error')
 
