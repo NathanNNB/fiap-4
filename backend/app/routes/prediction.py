@@ -1,7 +1,5 @@
-import os
 from flask import Blueprint, jsonify, request
 from flask_cors import CORS
-
 
 prediction = Blueprint("prediction", __name__)
 CORS(prediction)
