@@ -7,3 +7,5 @@ pyarrow
 tensorflow
 scikit-learn
 scikeras
+google-cloud-storage 
+google-cloud-aiplatform

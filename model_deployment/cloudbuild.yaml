@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/fiap-4/vertex-models/scikeras-predictor', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us-central1-docker.pkg.dev/fiap-4/vertex-models/scikeras-predictor']
+images:
+- 'us-central1-docker.pkg.dev/fiap-4/vertex-models/scikeras-predictor'
