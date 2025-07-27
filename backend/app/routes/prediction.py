@@ -4,11 +4,20 @@ from flask_cors import CORS
 import numpy as np
 import joblib
 
+
 prediction = Blueprint("prediction", __name__)
 CORS(prediction)
 
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "..", "models", "best_model.pkl")
-# model = joblib.load(MODEL_PATH)
+def carregar_modelo():
+    """Carrega o modelo treinado."""
+    model_path = os.path.join(os.path.dirname(__file__), "..", "models", "modelo.pkl")
+    if not os.path.exists(model_path):
+        raise FileNotFoundError(f"Model file not found at {model_path}")
+    return joblib.load(model_path)
+
+
+model = carregar_modelo()
+print("Modelo carregado com sucesso.", model)
 
 @prediction.route("/", methods=["POST"])
 def get_predicition():

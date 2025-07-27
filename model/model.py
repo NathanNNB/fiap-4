@@ -22,7 +22,7 @@ import get_bigquery_data
 from evaluate_model import avaliar_modelo, plotar_resultados
 from tranform_data import preparar_dados, desescalonar
 from build_model import rodar_gridsearch
-
+import joblib
 # ========== Configurações de Logging ==========
 # ==============================
 # 1. Configuração do logger principal (do seu código)
@@ -72,6 +72,8 @@ def main():
 
     best_model = grid.best_estimator_
 
+    
+
     y_pred = best_model.predict(dados["x_test"])
 
     y_pred_real = desescalonar(y_pred, target_col, dados["train_df"], scaler)
@@ -84,8 +86,9 @@ def main():
     # Plot
     plotar_resultados(y_test_real, y_pred_real)
 
-    with open("best_model.pkl", "wb") as file:
-        pickle.dump(best_model, file)
+    #with open("best_model.pkl", "wb") as file:
+    #    pickle.dump(best_model, file)
+    joblib.dump(best_model, 'modelo_LSTM.pkl')
     logging.info("💾 Modelo salvo como best_model.pkl")
 
 

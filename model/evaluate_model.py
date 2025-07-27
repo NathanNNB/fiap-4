@@ -11,7 +11,7 @@ def avaliar_modelo(y_true, y_pred):
     mape = np.mean(np.abs((y_true - y_pred) / y_true)) * 100
     r2 = r2_score(y_true, y_pred)
 
-    logging.debug("MSE: %s", mse)
+    logging.info("MSE: %s", mse)
     logging.info("RMSE: %s", rmse)
     logging.info("MAE: %s", mae)
     logging.info("MAPE: %s",mape)
