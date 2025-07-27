@@ -6,3 +6,10 @@ numpy
 scikit-learn
 scikeras
 tensorflow
+pandas
+yfinance
+pandas_gbq
+google-cloud-bigquery
+python-dotenv
+google-cloud-storage 
+google-cloud-aiplatform

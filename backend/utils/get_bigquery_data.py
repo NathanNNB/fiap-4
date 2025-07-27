@@ -2,7 +2,7 @@ from google.cloud import bigquery
 import pandas as pd
 import sys
 import os
-from backend.config import settings
+from config import settings
 
 def main():
     project_id = settings.BQ_PROJECT_ID
