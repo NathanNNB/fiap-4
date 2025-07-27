@@ -2,8 +2,7 @@ from google.cloud import bigquery
 import pandas as pd
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join("..")))
-from config import settings
+from backend.config import settings
 
 def main():
     project_id = settings.BQ_PROJECT_ID
@@ -11,11 +10,6 @@ def main():
     table_id = settings.BQ_TABLE_ID
     symbol = settings.SYMBOLS[0]  # Assuming you want to fetch data for the first symbol
     credentials = settings.GOOGLE_CREDENTIALS
-    print(credentials)
-    print(sys.path.append(os.path.abspath(os.path.join(".."))))
-    print("Current working directory:", os.getcwd())
-    print(os.path.exists(credentials))
-    
     
     client = bigquery.Client.from_service_account_json(credentials)
 

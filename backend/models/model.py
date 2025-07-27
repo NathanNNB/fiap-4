@@ -8,10 +8,10 @@ from keras.callbacks import EarlyStopping
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(".."))) # Garante que a raiz do projeto está no path
-from utils import get_bigquery_data 
-from utils.evaluate_model import avaliar_modelo, plotar_resultados
-from utils.tranform_data import preparar_dados, desescalonar
-from utils.build_model import rodar_gridsearch
+from backend.utils import get_bigquery_data 
+from backend.utils.evaluate_model import avaliar_modelo, plotar_resultados
+from backend.utils.tranform_data import preparar_dados, desescalonar
+from backend.utils.build_model import rodar_gridsearch
 import joblib
 # ========== Configurações de Logging ==========
 # ==============================
