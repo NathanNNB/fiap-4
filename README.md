@@ -62,6 +62,22 @@ The API is developed with Flask and deployed as a container on **Google Cloud Ru
   }
 
 ---
+
+## 🚀 Deployment to Google Cloud Platform (GCP)
+This project includes a PowerShell script (deploy.ps1) to automate the deployment process to Google Cloud Run using Google Artifact Registry and Cloud Build.
+
+### How to use
+- Make sure you have the Google Cloud SDK installed and authenticated (gcloud auth login).
+
+- Ensure your current gcloud project is set correctly (gcloud config set project YOUR_PROJECT_ID).
+
+- Run the deploy.ps1 script from the directory containing the Dockerfile.
+
+- The script will build the Docker image, push it to Google Artifact Registry, and deploy it to Cloud Run.
+
+- Once deployed, your Flask API will be available at the Cloud Run URL.
+
+---
 ### Running local: Model Creation
 
 1. Go to the `model` folder:
@@ -121,3 +137,9 @@ The API is developed with Flask and deployed as a container on **Google Cloud Ru
    python main.py
    ```
 
+--- 
+
+## 👥 Authors
+
+- [Nathan Novais Borges](https://github.com/NathanNNB)  
+- [William Bilatto](https://github.com/WilliamBilatto)  
