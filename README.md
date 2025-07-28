@@ -170,13 +170,15 @@ The API is developed with Flask and deployed as a container on **Google Cloud Ru
   }
   ]
 ```
-</details>
+
 - **Sample Response:**
   ```json
   {
     "predicted_value": 189.50,
     "actual_value": 190.02
   }
+
+</details>
 
 - Postman Example
 <img width="2554" height="1073" alt="Screenshot 2025-07-28 193224" src="https://github.com/user-attachments/assets/ffeb8e3c-a7ea-4646-a34a-94fb37197409" />
