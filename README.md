@@ -65,13 +65,118 @@ The API is developed with Flask and deployed as a container on **Google Cloud Ru
 - **Input Requirements:** JSON payload containing *at least 11 historical records* of stock data. This minimum sequence length is required for the LSTM model to generate a prediction.
 - **Sample request:**
   ```json
-   # Add request
+   [
+  {
+    "Date": "2025-07-03",
+    "AAPL_Open": 212.149994,
+    "AAPL_High": 214.649994,
+    "AAPL_Low": 211.809998,
+    "AAPL_Close": 213.550003,
+    "AAPL_Volume": 34955800,
+    "symbol": "AAPL"
+  },
+  {
+    "Date": "2025-07-07",
+    "AAPL_Open": 212.679993,
+    "AAPL_High": 216.229996,
+    "AAPL_Low": 208.800003,
+    "AAPL_Close": 209.949997,
+    "AAPL_Volume": 50229000,
+    "symbol": "AAPL"
+  },
+  {
+    "Date": "2025-07-08",
+    "AAPL_Open": 210.100006,
+    "AAPL_High": 211.429993,
+    "AAPL_Low": 208.449997,
+    "AAPL_Close": 210.009995,
+    "AAPL_Volume": 42848900,
+    "symbol": "AAPL"
+  },
+  {
+    "Date": "2025-07-09",
+    "AAPL_Open": 209.529999,
+    "AAPL_High": 211.330002,
+    "AAPL_Low": 207.220001,
+    "AAPL_Close": 211.139999,
+    "AAPL_Volume": 48749400,
+    "symbol": "AAPL"
+  },
+  {
+    "Date": "2025-07-10",
+    "AAPL_Open": 210.509995,
+    "AAPL_High": 213.479996,
+    "AAPL_Low": 210.029999,
+    "AAPL_Close": 212.410004,
+    "AAPL_Volume": 44443600,
+    "symbol": "AAPL"
+  },
+  {
+    "Date": "2025-07-11",
+    "AAPL_Open": 210.570007,
+    "AAPL_High": 212.130005,
+    "AAPL_Low": 209.860001,
+    "AAPL_Close": 211.160004,
+    "AAPL_Volume": 39765800,
+    "symbol": "AAPL"
+  },
+  {
+    "Date": "2025-07-14",
+    "AAPL_Open": 209.929993,
+    "AAPL_High": 210.910004,
+    "AAPL_Low": 207.539993,
+    "AAPL_Close": 208.619995,
+    "AAPL_Volume": 38840100,
+    "symbol": "AAPL"
+  },
+  {
+    "Date": "2025-07-15",
+    "AAPL_Open": 209.220001,
+    "AAPL_High": 211.889999,
+    "AAPL_Low": 208.919998,
+    "AAPL_Close": 209.110001,
+    "AAPL_Volume": 42296300,
+    "symbol": "AAPL"
+  },
+  {
+    "Date": "2025-07-16",
+    "AAPL_Open": 210.300003,
+    "AAPL_High": 212.399994,
+    "AAPL_Low": 208.639999,
+    "AAPL_Close": 210.160004,
+    "AAPL_Volume": 47490500,
+    "symbol": "AAPL"
+  },
+  {
+    "Date": "2025-07-17",
+    "AAPL_Open": 210.570007,
+    "AAPL_High": 211.800003,
+    "AAPL_Low": 209.589996,
+    "AAPL_Close": 210.020004,
+    "AAPL_Volume": 48068100,
+    "symbol": "AAPL"
+  },
+  {
+    "Date": "2025-07-18",
+    "AAPL_Open": 210.869995,
+    "AAPL_High": 211.789993,
+    "AAPL_Low": 209.699997,
+    "AAPL_Close": 211.179993,
+    "AAPL_Volume": 48974600,
+    "symbol": "AAPL"
+  }
+  ]
 - **Sample Response:**
   ```json
   {
     "predicted_value": 189.50,
     "actual_value": 190.02
   }
+
+- Postman Example
+<img width="2554" height="1073" alt="Screenshot 2025-07-28 193224" src="https://github.com/user-attachments/assets/ffeb8e3c-a7ea-4646-a34a-94fb37197409" />
+
+
 
 ---
 
