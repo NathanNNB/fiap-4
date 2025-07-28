@@ -60,7 +60,7 @@ The API is developed with Flask and deployed as a container on **Google Cloud Ru
 
 
 - **Base URL:** [https://flask-service-8668868710.us-central1.run.app/](https://flask-service-8668868710.us-central1.run.app/)
-- **Route:** `/predict`
+- **Route:** `/prediction`
 - **Method:** `POST`
 - **Input Requirements:** JSON payload containing *at least 11 historical records* of stock data. This minimum sequence length is required for the LSTM model to generate a prediction.
 - **Sample request:**
