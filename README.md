@@ -23,14 +23,13 @@ We used the [`yfinance`](https://pypi.org/project/yfinance/) library to collect 
 
 ### 2. Preprocessing
 - Removed irrelevant columns and handled missing values.
-- Normalized data to improve model performance.
+- Normalized data to improve model performance through StandardScaler.
 - Created time windows (sequences of previous days) as input for the LSTM model.
 
 ### 3. Model Construction
 - Used an **LSTM (Long Short-Term Memory)** model, well-suited for time series data.
 - The model takes a sequence of previous days as input and predicts the next closing price.
-- The `scikeras` library was used to integrate Keras models with scikit-learn tools and serialize the model in `.pkl` format.
-
+- The `scikeras` library was used to integrate Keras models with scikit-learn tools using GridSearch and Cross-Validation to tune hyperparameters and increase performance
 ### 4. Training
 - Split data into training and testing sets.
 - Tuned hyperparameters such as number of neurons, dropout rate, and window size.
@@ -39,6 +38,12 @@ We used the [`yfinance`](https://pypi.org/project/yfinance/) library to collect 
 ### 5. Evaluation
 - Evaluated model performance using **MSE (Mean Squared Error)** and **MAE (Mean Absolute Error)**.
 - Compared predicted values with actual closing prices.
+- Latest metrics achieved: 
+- MSE: 16.1684
+- RMSE: 4.0210
+- MAE: 3.0352
+- MAPE: 1.62%
+- R² Score: 0.9190
 
 ---
 
