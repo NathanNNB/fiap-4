@@ -6,7 +6,8 @@ import joblib
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
 import sys
-sys.path.append(os.path.abspath(os.path.join(".."))) 
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 from utils.tranform_data import criar_sequencias, transformar_colunas, desescalonar
 from utils.build_model import criar_modelo
 
@@ -15,7 +16,7 @@ CORS(prediction)
 
 def carregar_modelo():
     """Carrega o modelo treinado."""
-    model_path = "models/modelo_LSTM_v2.pkl"
+    model_path = os.path.join(os.getcwd(), "models", "modelo_LSTM_v2.pkl")
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"Model file not found at {model_path}")
     return joblib.load(model_path)

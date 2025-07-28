@@ -1,6 +1,68 @@
-## Project Description
+# 📈 Stock Closing Price Prediction with Machine Learning
 
-### 🔧 Model Creation
+This project aims to predict the closing price of Apple (AAPL) stock based on historical data. We use the `yfinance` library to collect market data, store it in Google BigQuery, and use it to train a predictive model. Additionally, we developed a Flask API that allows predictions based on new historical data, returning both the predicted value and the actual closing price.
+
+The API is currently deployed and accessible at:  
+[https://flask-service-8668868710.us-central1.run.app/](https://flask-service-8668868710.us-central1.run.app/)
+
+---
+
+## 🚀 Features
+
+- 📊 Automated collection of Apple stock historical data using `yfinance`
+- ☁️ Storage and querying of data in **Google BigQuery**
+- 🧠 Training a Machine Learning model to predict closing prices
+- 🔌 REST API built with **Flask**, deployed on **Google Cloud Run**, to make predictions from supplied data
+- 📈 Returns predicted value alongside actual value for comparison
+
+---
+## 🧠 How the Model Was Created
+
+### 1. Data Collection
+We used the [`yfinance`](https://pypi.org/project/yfinance/) library to collect historical data for AAPL stock. The data was stored in Google BigQuery, enabling scalable and efficient data querying for analysis and modeling.
+
+### 2. Preprocessing
+- Removed irrelevant columns and handled missing values.
+- Normalized data to improve model performance.
+- Created time windows (sequences of previous days) as input for the LSTM model.
+
+### 3. Model Construction
+- Used an **LSTM (Long Short-Term Memory)** model, well-suited for time series data.
+- The model takes a sequence of previous days as input and predicts the next closing price.
+- The `scikeras` library was used to integrate Keras models with scikit-learn tools and serialize the model in `.pkl` format.
+
+### 4. Training
+- Split data into training and testing sets.
+- Tuned hyperparameters such as number of neurons, dropout rate, and window size.
+- Trained locally and exported the model for production use.
+
+### 5. Evaluation
+- Evaluated model performance using **MSE (Mean Squared Error)** and **MAE (Mean Absolute Error)**.
+- Compared predicted values with actual closing prices.
+
+---
+
+
+## 🔌 Prediction API
+The API is developed with Flask and deployed as a container on **Google Cloud Run** for scalable serving.
+
+
+- **Base URL:** [https://flask-service-8668868710.us-central1.run.app/](https://flask-service-8668868710.us-central1.run.app/)
+- **Route:** `/predict`
+- **Method:** `POST`
+- **Input Requirements:** JSON payload containing *at least 11 historical records* of stock data. This minimum sequence length is required for the LSTM model to generate a prediction.
+- **Sample request:**
+  ```json
+   # Add request
+- **Sample Response:**
+  ```json
+  {
+    "predicted_value": 189.50,
+    "actual_value": 190.02
+  }
+
+---
+### Running local: Model Creation
 
 1. Go to the `model` folder:
 
@@ -36,7 +98,8 @@
     END_DATE = "2024-07-20"
     SYMBOLS = ["AAPL"]  # You can add more symbols as needed
 
-###  Backend
+---
+### Running local: Backend
 
 1. Open the backend folder:
    ```
@@ -58,6 +121,3 @@
    python main.py
    ```
 
-
-
-# curl -X POST http://localhost:8080/prediction/ -H "Content-Type: application/json" -d '{"close_prices": [130.5, 131.2, 132.0, 133.1, 134.5, 135.0, 136.2, 137.8, 138.9, 139.7, 140.5, 141.2, 142.0, 143.1, 144.3, 145.7, 146.8, 147.9, 148.5, 149.3, 150.1, 151.0, 152.4, 153.2, 154.0, 155.1, 156.3, 157.0, 158.5, 159.2, 160.0, 161.1, 162.5, 163.2, 164.0, 165.4, 166.0, 167.1, 168.3, 169.0, 170.2, 171.0, 172.5, 173.4, 174.2, 175.5, 176.0, 177.1, 178.3, 179.2, 180.0, 181.4, 182.0, 183.1, 184.3, 185.0, 186.5, 187.2, 188.8, 189.9]}'
