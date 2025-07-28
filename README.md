@@ -45,6 +45,13 @@ We used the [`yfinance`](https://pypi.org/project/yfinance/) library to collect 
 - MAPE: 1.62%
 - R² Score: 0.9190
 
+Values with Keras Regressor, GridSearch and Cross-Validation
+<img width="1200" height="600" alt="Figure_1" src="https://github.com/user-attachments/assets/0b2c2f8e-9288-455f-9d8f-bbdfa9312ccc" />
+
+Values using only optimal hyperparameters
+<img width="988" height="528" alt="image" src="https://github.com/user-attachments/assets/fc632243-8bcd-43cf-a644-1bdb6e20f109" />
+
+
 ---
 
 
