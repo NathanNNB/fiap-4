@@ -66,7 +66,8 @@ The API is developed with Flask and deployed as a container on **Google Cloud Ru
 - **Sample request:**
 <details>
   <summary>Mostrar exemplo de dados JSON</summary>
-  ``` json
+  
+  ```json
    [
   {
     "Date": "2025-07-03",
@@ -168,8 +169,8 @@ The API is developed with Flask and deployed as a container on **Google Cloud Ru
     "symbol": "AAPL"
   }
   ]
-  </details>
-  ```
+```
+</details>
 - **Sample Response:**
   ```json
   {
