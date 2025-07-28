@@ -64,8 +64,9 @@ The API is developed with Flask and deployed as a container on **Google Cloud Ru
 - **Method:** `POST`
 - **Input Requirements:** JSON payload containing *at least 11 historical records* of stock data. This minimum sequence length is required for the LSTM model to generate a prediction.
 - **Sample request:**
+<details>
+  <summary>Mostrar exemplo de dados JSON</summary>
   ``` json
-  {
    [
   {
     "Date": "2025-07-03",
@@ -167,7 +168,7 @@ The API is developed with Flask and deployed as a container on **Google Cloud Ru
     "symbol": "AAPL"
   }
   ]
-  }
+  </details>
   ```
 - **Sample Response:**
   ```json
